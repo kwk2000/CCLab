@@ -9,6 +9,7 @@ function setup(){
     
 }
 function draw(){
+    let o
     let x=mouseX
     let y=mouseY
     if(mouseIsPressed){
