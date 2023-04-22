@@ -1,0 +1,130 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* canvas {
+  display: block;
+} */
+
+#canvasContainer{
+  position: absolute;
+  left: 800px;
+  top: 1530px;
+}
+
+
+#title{
+  font-family: 'Bruno Ace', cursive;
+  color: tomato;
+  background-image: url(imgs/08.png);
+  background-size: 500px;
+  background-position: center;
+  width:300px;
+  /* height:70px; */
+  text-align: center;
+  font-size: 30px;
+  height: 70px;
+  padding: 50px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  position: sticky;
+  top: 20px;
+  left: 1000px;
+  margin-top: 10px
+}
+
+.content{
+  color:blueviolet; 
+  background-image: url(imgs/Digital\ Notes_06.jpg);
+  background-size: 700px;
+  background-position: top;
+  padding-bottom: 0px;
+  font-size: 30px;
+  /* text-align: left; */
+  position: relative;
+  left: 3%;
+  top: 100px;
+  width: 500px;
+  /* border-style: solid;
+  border-width: 1px; */
+  padding: 120px;
+  
+  /* margin-bottom: 0px;
+  margin-top: 50px; */
+}
+#onTop{
+  /* background-color:rgb(0, 188, 217); */
+  /* background-image: url(imgs/92457189edb83561ffcc1904ee181371.png);
+  background-size: auto; */
+  color:lawngreen;
+  text-align: center;
+  font-family: 'Rubik Pixels', cursive;
+  font-size:30px;
+  position: absolute;
+  /* top:0px; */
+  top: -10px;
+  left:10px;
+  /* padding: 60px,40px,60px,40px; */
+  /* padding-right: 90px; */
+  width: fit-content;
+  /* margin-left: 0px;
+  margin-right: 0px; */
+  /* margin: 0px; */
+
+
+}
+
+.introduction{
+  /* background-color:rgb(0, 188, 217); */
+  background-image: url(imgs/92457189edb83561ffcc1904ee181371.png);
+  background-position: center;
+  text-align: center;
+  color:lawngreen;
+  font-family: 'Vina Sans', cursive;
+  font-size: 40px;
+  position: absolute;
+  top:140px;
+  /* top: 500px; */
+  left: 50px;
+  padding: 60px;
+  width: fit-content;
+  /* margin-left: 10px;
+  margin-right: 0px; */
+  margin: 0px;
+
+
+}
+.image{
+  position: absolute;
+  left: 800px;
+  top: 610px;
+}
+.description{
+  color: wheat;
+  /* background-color: white; */
+  background-image: url(imgs/5abb1ce9ec5030d36219814b69572e66.png);
+  background-position: center;
+  padding: 60px;
+  /* padding-bottom: 50px; */
+  font-size: 40px;
+  position: absolute;
+  left: 1000px;
+  top: 350px
+
+}
+.description2{
+  color: orangered;
+  /* background-color: white; */
+  background-image: url(imgs/5abb1ce9ec5030d36219814b69572e66.png);
+  background-position: center;
+  padding: 78px;
+  /* padding-bottom: 50px; */
+  font-size: 40px;
+  position: absolute;
+  left: 950px;
+  top: 1260px
+
+}
+
+
