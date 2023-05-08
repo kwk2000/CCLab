@@ -10,11 +10,13 @@ let itemCheck;
 let clearSound;
 let clearCheck = false;
 let startCheck = false;
+let finalCheck = false;
 
-let osc, envelope, fft;
+let osc, envelope, fft, env, osc2;
 // let p
 let scaleArray = [60, 62, 64, 65, 67, 69, 71, 72];
 let note = 0;
+let finalWork = [];
 
 function preload() {
   clearSound = loadSound("mp3/game-clear.mp3");
@@ -27,6 +29,8 @@ function setup() {
   let vPos = createVector(width / 2, height / 2);
   let vVel = createVector(0, 0);
   let vAcc = createVector(0, 0);
+  
+  
 
   for (let i = 0; i < number1; i++) {
     loco[i] = new Loco(vPos, vVel, 100, 50);
@@ -39,7 +43,6 @@ function setup() {
   p = 0;
 
   //for sound when item is eaten
-  // createCanvas(500,500);
   push();
   osc = new p5.SinOsc();
 
@@ -57,6 +60,23 @@ function setup() {
   fft = new p5.FFT();
   pop();
 
+  //   push();
+  //   osc2 = new p5.SinOsc();
+
+  //   // Instantiate the envelope
+  //   env = new p5.Env();
+
+  //   // set attackTime, decayTime, sustainRatio, releaseTime
+  //   env.setADSR(0.001, 0.5, 0.1, 0.5);
+
+  //   // set attackLevel, releaseLevel
+  //   env.setRange(1, 0);
+
+  //   osc2.start();
+
+  //   fft = new p5.FFT();
+  //   pop();
+
   getAudioContext().suspend();
 }
 
@@ -66,20 +86,31 @@ function mousePressed() {
 }
 
 function draw() {
-  background(220);
+  // background(220);
+  
+  colorR = 220;
+  background(colorR);
+  for (let i = 0; i < height; i++) {
+    let colorback = map(i, 0 + 30, height - 100, 240,10);
+    stroke(120,120,colorback);
+    strokeWeight(1);
+    line(0, i, width, i);
+  }
 
+  //start audio
   if (startCheck == true) {
     push();
     noStroke();
 
+    //play music when eating item
     if (itemCheck == true || frameCount === 1) {
       let midiValue = scaleArray[note];
       let freqValue = midiToFreq(midiValue);
       osc.freq(freqValue);
 
       envelope.play(osc, 0, 0.1);
-      // note = (note + noteChange) % scaleArray.length;
-      // note = (noteChange) % scaleArray.length;
+
+      finalWork.push(midiValue);
     }
 
     //for background
@@ -121,15 +152,29 @@ function draw() {
           push();
           translate(width / 2, height / 2);
           rectMode(CENTER);
-          fill(random(255), random(255), random(255), 40);
+          fill(random(255), random(255), random(255),80);
           stroke(random(255), random(255), random(255));
           strokeWeight(3);
           rect(0, 0, 400, 200);
           // fill();
-          textFont("Foldit");
-          textSize(100);
+          textFont("Nabla");
+          textSize(65);
           textAlign(CENTER);
           text("GAME CLEAR!", 0, 30);
+
+          // for (let i = 0; i < finalWork.length; i++) {
+          //           osc2 = new p5.SinOsc();
+          //           env = new p5.Envelope(0.1, 0.7, 0.3, 0.1);
+          //           osc2.start();
+          //           let note2 = 0;
+          //           let midiValue = finalWork[note2];
+          //           let freqValue = midiToFreq(midiValue);
+          //           osc2.freq(freqValue);
+
+          //           env.play(osc2, 0, 0.1);
+          //           note2 = (note2 + 1) % finalWork.length;
+          //           finalCheck=true
+          // }
 
           if (clearSound.isPlaying() == false && clearCheck == false) {
             clearSound.play();
@@ -168,6 +213,8 @@ function draw() {
           item.length > 0
         ) {
           note = item[j].note;
+          // console.log(note)
+          // console.log(finalWork);
           item.splice(j, 1);
           p = p + 1;
           loco[i].colorr = loco[i].colorr + random(30, 60);
@@ -194,6 +241,7 @@ function draw() {
     // text()
 
     push();
+    stroke(255)
     textFont("Shadows Into Light");
     textSize(40);
     text("/4", width - 175, 120);
@@ -208,7 +256,7 @@ function draw() {
     textAlign(CENTER);
     stroke(random(255));
     strokeWeight(random(5));
-    text("--Click to Start--", width / 2, height / 2 + 70);
+    text("--Click to Start--", width / 2, height / 2 + 110);
     pop();
   }
 
@@ -488,3 +536,4 @@ class Item {
     // console.log(this.y);
   }
 }
+
