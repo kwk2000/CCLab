@@ -1,0 +1,85 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+#container1{
+  position: absolute;
+  left: 70%;
+  top: 400px
+
+}
+#container2{
+  position: absolute;
+  left: 70%;
+  top: 800px
+
+}
+#container3{
+  position: absolute;
+  left: 70%;
+  top: 1250px
+
+}
+#container4{
+  position: absolute;
+  left: 70%;
+  top: 1750px
+
+}
+
+#head{
+  font-family: 'Bruno Ace SC', cursive;
+  font-size: 50px;
+}
+
+.content{
+  color:blueviolet; 
+  text-align: center;
+  /* background-image: url(imgs/Digital\ Notes_06.jpg); */
+  background-size: 700px;
+  background-position: top;
+  font-family: 'Bruno Ace', cursive;
+  position:absolute;
+  padding-bottom: 0px;
+  font-size: 50px;
+  /* text-align: left; */
+  position: relative;
+  left: 27%;
+  top: 100px;
+  width: 500px;
+  /* border-style: solid;
+  border-width: 1px; */
+  padding: 120px;
+  
+  /* margin-bottom: 0px;
+  margin-top: 50px; */
+}
+
+.intro{
+  color: navy; 
+  
+  font-family: 'Caveat', cursive;
+
+
+  /* background-image: url(imgs/Digital\ Notes_06.jpg); */
+  background-size: 700px;
+  background-position: top;
+  padding-bottom: 0px;
+  font-size: 50px;
+  /* text-align: left; */
+  position: relative;
+  left: 3%;
+  top: 100px;
+  width: 500px;
+  /* border-style: solid;
+  border-width: 1px; */
+  padding: 120px;
+  
+  /* margin-bottom: 0px;
+  margin-top: 50px; */
+}
