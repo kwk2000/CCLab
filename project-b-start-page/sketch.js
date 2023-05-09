@@ -38,7 +38,7 @@ function draw() {
     }
   }
   push();
-  translate(width / 2-5, height / 2 + 120);
+  translate(width / 2-5, height / 2 + 180);
   // fill(255, 255, 0);
   fill(c);
   stroke(random(255), random(255), random(255));
@@ -60,8 +60,8 @@ function draw() {
   if (
     mouseX > width / 2 - 95 &&
     mouseX < width / 2 + 95 &&
-    height / 2 + 50 < mouseY &&
-    mouseY < height / 2 + 110
+    height / 2 + 140 < mouseY &&
+    mouseY < height / 2 + 210
   ) {
     c = color(255);
   } else {
