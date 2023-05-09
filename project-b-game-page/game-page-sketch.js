@@ -11,6 +11,7 @@ let clearSound;
 let clearCheck = false;
 let startCheck = false;
 let finalCheck = false;
+let screamCheck = false;
 
 let osc, envelope, fft, env, osc2;
 // let p
@@ -20,6 +21,7 @@ let finalWork = [];
 
 function preload() {
   clearSound = loadSound("mp3/game-clear.mp3");
+  screamSound = loadSound("mp3/scream.mp3")
 }
 
 function setup() {
@@ -133,7 +135,7 @@ function draw() {
         //
 
         //when mouse is far from character
-        if (loco[i].mouthCheck() || loco[i].edgeCheck()) {
+        if (loco[i].mouthCheck() && p<=3) {
           item[j].display();
           item[j].shake();
           loco[i].move();
@@ -141,6 +143,13 @@ function draw() {
           loco[i].display();
           loco[i].drawDeadEyes();
           loco[i].mouthBig();
+          // screamSound.play();
+          if (screamSound.isPlaying() == false && screamCheck == false) {
+            screamSound.play();
+            screamCheck = true;
+          }else{
+            screamCheck = false;
+          }
         }
         //game clear condition
         else if (p > 3) {
